@@ -1,0 +1,70 @@
+html {
+  box-sizing: border-box;
+  display: flex;
+  min-height: 100vh;
+  font-family: Futura,"Trebuchet MS",Arial,sans-serif;
+  text-align: center;
+  background-color: #333;
+
+  justify-content: center;
+  align-items: center;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.wrapper {
+  max-width: 350px;
+  padding: 10px;
+  margin-top: 20px;
+  background: rgba(255,255,255,.95);
+  box-shadow: 0 0 0 10px rgba(0,0,0,.1);
+}
+
+h1 {
+  margin: 0;
+  font-weight: 200;
+  text-align: center;
+}
+
+.plates {
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  list-style: none;
+}
+
+.plates li {
+  display: flex;
+  padding: 10px 0;
+  font-weight: 100;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+.plates label {
+  flex: 1;
+  cursor: pointer;
+}
+
+.plates input {
+  display: none;
+}
+
+.plates input + label:before {
+  margin-right: 10px;
+  content: '⬜️';
+}
+
+.plates input:checked + label:before {
+  width: 100px;
+  content: '\f13d';
+  // content: '\f13d';
+  background-color: #fd3267;
+  border: 2px solid #fd3267;
+}
+
+.add-items input {
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,.1);
+  outline: 0;
+}
