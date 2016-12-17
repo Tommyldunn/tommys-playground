@@ -10,13 +10,9 @@ var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var uglify = require("gulp-uglify");
 var cssnano = require('gulp-cssnano');
-const del = require('del');
+var del = require('del');
 var $    = require('gulp-load-plugins')();
-var sassPaths = [
-  'bower_components/normalize.scss/sass',
-  'bower_components/foundation-sites/scss',
-  'bower_components/motion-ui/src'
-];
+
 
 function bundle(bundler) {
     return bundler
@@ -50,7 +46,12 @@ gulp.task('js-build', function() {
 });
 
 gulp.task('sass-build', function() {
-    return gulp.src('./src/css/main.scss')
+    return gulp.src([
+      './src/css/reset.scss',
+      './src/css/main.scss',
+      './src/css/home.scss',
+      './src/views/localStorage/local-storage.scss'
+    ])
       .pipe(sass().on('error', sass.logError))
       .pipe(gulp.dest('./dist/css'));
 });
@@ -60,21 +61,18 @@ gulp.task('favicon', function() {
       .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('vendor-sass', function() {
-  return gulp.src('./src/vendor.scss')
-    .pipe($.sass({
-      includePaths: sassPaths,
-      outputStyle: 'compressed' // if css compressed **file size**
-    })
-      .on('error', $.sass.logError))
-    .pipe($.autoprefixer({
-      browsers: ['last 2 versions', 'ie >= 9']
-    }))
-    .pipe(gulp.dest('./dist/css'));
+gulp.task('fonts', function() {
+    return gulp.src(['./src/fonts/**/*', '!**/*.scss'])
+      .pipe(gulp.dest('./dist/css/'));
+});
+
+gulp.task('images', function() {
+    return gulp.src('./src/images/**/*')
+      .pipe(gulp.dest('./dist/images/'));
 });
 
 gulp.task('sass-watch', function() {
-    gulp.watch('./src/css/*.scss', ['sass-build']);
+    gulp.watch(['./src/css/*.scss', './src/views/**/*.scss'], ['sass-build']);
 });
 
 gulp.task('minify-images', function() {
@@ -103,7 +101,7 @@ gulp.task('watch', ['js-watch', 'sass-watch'], function() {
     console.log(' --- Watching CSS & JS files --- ');
 });
 
-gulp.task('build', ['del', 'js-build', 'sass-build', 'favicon'], function() {
+gulp.task('build', ['js-build', 'sass-build', 'favicon', 'fonts', 'images'], function() {
     console.log(' --- Finished Building CSS & JS files --- ');
 });
 

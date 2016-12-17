@@ -12,7 +12,7 @@ app.use(express.static(__dirname + '/dist'));
 var port = process.env.PORT || 8000;
 
 app.get('/', function (req, res) {
-  res.render('index', {title: 'Test Site'});
+  res.render('index', {title: 'tommyldunns playground'});
 })
 app.get('/local-storage', function (req, res) {
   res.render('localStorage/index', {title: 'local-storage'});

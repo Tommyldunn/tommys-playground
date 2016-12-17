@@ -1,13 +1,33 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Social share meta tags -->
+	<meta property="og:title" content="<%= title %>">
+	<meta property="og:description" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="">
+	<meta property="og:site_name" content="">
+	<!-- End social share meta tags -->
+	<link rel="shortcut icon" href="../images/favicon.png">
+	<link rel="shortcut icon" href="../favicon.ico">
 	<title><%= title %></title>
-	<link rel="stylesheet" href="css/main.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/home.css" />
 </head>
 <body>
-<div id="hello-world">Hello World</div>
+<main class="container">
+<div class="jumbo">
+	<h1>DEMOS</h1>
+</div>
+
+	<div class="row">
+	<a href="/local-storage" class="link-item">
+			<span>Using Local Storage</span>
+	</a>
+</div>
+</main>
 <script type="text/javascript" src="js/bundle.js"></script>
 </body>
 </html>
