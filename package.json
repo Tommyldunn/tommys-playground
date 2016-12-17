@@ -13,12 +13,8 @@
   "author": "tommyldunn <tommylogandunn@gmail.com>",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
     "socket.io": "latest",
     "babelify": "6.3.0",
-=======
-    "babelify": "^7.3.0",
->>>>>>> 969f210b4ae100654b2450e90bc2d1e6305f2a4e
     "browser-sync": "^2.11.1",
     "browserify": "^13.0.0",
     "compression": "^1.6.2",
