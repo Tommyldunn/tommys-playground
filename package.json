@@ -37,5 +37,5 @@
     "gulp-load-plugins": "^1.4.0",
     "gulp-sass": "^2.3.2"
   },
-  "description": ""
+  "description": "base setup to get up and running quickly"
 }
