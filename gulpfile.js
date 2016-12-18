@@ -50,7 +50,7 @@ gulp.task('sass-build', function() {
       './src/css/reset.scss',
       './src/css/main.scss',
       './src/css/home.scss',
-      './src/views/localStorage/local-storage.scss'
+      './src/css/local-storage.scss'
     ])
       .pipe(sass().on('error', sass.logError))
       .pipe(gulp.dest('./dist/css'));
