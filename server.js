@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
 })
 
 app.get('/local-storage', function (req, res) {
-  res.render('localStorage/index', {title: 'local-storage'});
+  res.render('LocalStorage/index.html', {title: 'local-storage'});
 })
 
 app.listen(port, function() {
