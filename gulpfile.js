@@ -51,7 +51,8 @@ gulp.task('sass-build', function() {
       './src/css/main.scss',
       './src/css/home.scss',
       './src/css/local-storage.scss',
-      './src/css/drum-kit.scss'
+      './src/css/drum-kit.scss',
+      './src/css/webcam.scss'
     ])
       .pipe(sass().on('error', sass.logError))
       .pipe(gulp.dest('./dist/css'));
@@ -97,6 +98,11 @@ gulp.task("js-uglify", function() {
     .pipe(gulp.dest('./dist/js'));
 });
 
+gulp.task("component-js", function() {
+    return gulp.src('./src/views/**/*.js')
+    .pipe(gulp.dest('./dist/js'));
+});
+
 gulp.task("css-minify", function() {
     return gulp.src('./dist/css/main.css')
     .pipe(cssnano())
@@ -107,7 +113,7 @@ gulp.task('watch', ['js-watch', 'sass-watch'], function() {
     console.log(' --- Watching CSS & JS files --- ');
 });
 
-gulp.task('build', ['js-build', 'sass-build', 'favicon', 'fonts', 'images', 'sounds'], function() {
+gulp.task('build', ['js-build', 'component-js', 'sass-build', 'favicon', 'fonts', 'images', 'sounds'], function() {
     console.log(' --- Finished Building CSS & JS files --- ');
 });
 
