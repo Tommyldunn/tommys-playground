@@ -50,7 +50,8 @@ gulp.task('sass-build', function() {
       './src/css/reset.scss',
       './src/css/main.scss',
       './src/css/home.scss',
-      './src/css/local-storage.scss'
+      './src/css/local-storage.scss',
+      './src/css/drum-kit.scss'
     ])
       .pipe(sass().on('error', sass.logError))
       .pipe(gulp.dest('./dist/css'));
@@ -59,6 +60,11 @@ gulp.task('sass-build', function() {
 gulp.task('favicon', function() {
     return gulp.src('./src/favicon.ico')
       .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('sounds', function() {
+    return gulp.src('./src/sounds/**/*')
+      .pipe(gulp.dest('./dist/sounds/'));
 });
 
 gulp.task('fonts', function() {
@@ -72,7 +78,7 @@ gulp.task('images', function() {
 });
 
 gulp.task('sass-watch', function() {
-    gulp.watch(['./src/css/*.scss', './src/views/**/*.scss'], ['sass-build']);
+    gulp.watch(['./src/**/*.scss', './src/css/*.scss'], ['sass-build']);
 });
 
 gulp.task('minify-images', function() {
@@ -101,7 +107,7 @@ gulp.task('watch', ['js-watch', 'sass-watch'], function() {
     console.log(' --- Watching CSS & JS files --- ');
 });
 
-gulp.task('build', ['js-build', 'sass-build', 'favicon', 'fonts', 'images'], function() {
+gulp.task('build', ['js-build', 'sass-build', 'favicon', 'fonts', 'images', 'sounds'], function() {
     console.log(' --- Finished Building CSS & JS files --- ');
 });
 

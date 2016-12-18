@@ -19,6 +19,10 @@ app.get('/local-storage', function (req, res) {
   res.render('LocalStorage/index.html', {title: 'local-storage'});
 })
 
+app.get('/drum-kit', function (req, res) {
+  res.render('drum-kit/index.html', {title: 'drum-kit'});
+})
+
 app.listen(port, function() {
 	console.log('server running on port ' + port);
 });
