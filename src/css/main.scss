@@ -1,3 +1,27 @@
 @import "reset";
 @import "base";
 @import "../fonts/styles";
+body {
+  min-width: 350px;
+}
+footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  .container {
+    display: flex;
+
+    justify-content: space-between;
+  }
+  a {
+    font-size: 1.5rem;
+    &:hover {
+      i {
+        color: darken(#f38bd3, 10%);
+      }
+    }
+  }
+}
