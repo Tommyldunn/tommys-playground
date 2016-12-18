@@ -23,6 +23,10 @@ app.get('/drum-kit', function (req, res) {
   res.render('drum-kit/index.html', {title: 'drum-kit'});
 })
 
+app.get('/webcam', function (req, res) {
+  res.render('webcam/index.html', {title: 'webcam'});
+})
+
 app.listen(port, function() {
 	console.log('server running on port ' + port);
 });
