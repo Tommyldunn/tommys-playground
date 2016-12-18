@@ -27,6 +27,10 @@ app.get('/webcam', function (req, res) {
   res.render('webcam/index.html', {title: 'webcam'});
 })
 
+app.get('/drum-machine', function (req, res) {
+  res.render('drum-machine/index.html', {title: 'drum-machine'});
+})
+
 app.listen(port, function() {
 	console.log('server running on port ' + port);
 });

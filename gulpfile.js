@@ -52,7 +52,8 @@ gulp.task('sass-build', function() {
       './src/css/home.scss',
       './src/css/local-storage.scss',
       './src/css/drum-kit.scss',
-      './src/css/webcam.scss'
+      './src/css/webcam.scss',
+      './src/css/drum-machine.scss',
     ])
       .pipe(sass().on('error', sass.logError))
       .pipe(gulp.dest('./dist/css'));
