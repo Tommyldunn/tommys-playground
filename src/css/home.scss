@@ -21,7 +21,7 @@ a {
   padding-left: 20px;
   margin-top: 3rem;
   margin-bottom: 3rem;
-  border: 2px solid white;
+  border: 2px solid #fff;
   h3 {
     color: #fff;
     letter-spacing: 5px;
@@ -48,7 +48,7 @@ span {
     height: 2px;
     margin-top: -.5px;
     content: '';
-    background: #fff;
+    background-color: #fff;
   }
 
   &:before {
@@ -57,20 +57,20 @@ span {
 
   &:after {
     right: 2.5px;
-    background: #fff;
+    background-color: lighten(#1abc9c, 10%);
     transition: width .8s cubic-bezier(.22, .61, .36, 1);
   }
 
   &:hover {
     &:before {
       width: 100%;
-      background: #fff;
+      background-color: #fff;
       transition: width .5s cubic-bezier(.22, .61, .36, 1);
     }
 
     &:after {
       width: 100%;
-      background: transparent;
+      background-color: transparent;
       transition: 0s;
     }
   }
